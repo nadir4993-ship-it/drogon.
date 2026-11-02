@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DROGON | Game Store</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #080808;
+    color: white;
+}
+
+header {
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.hero {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    background: radial-gradient(circle, #202020 0%, #080808 70%);
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 85px);
+    font-weight: 900;
+    letter-spacing: 8px;
+}
+
+.hero p {
+    color: #999;
+    margin-top: 18px;
+    font-size: 16px;
+}
+
+.hero button {
+    margin-top: 30px;
+    padding: 15px 35px;
+    background: white;
+    color: black;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.hero button:hover {
+    background: #aaa;
+    transform: scale(1.05);
+}
+
+.section {
+    padding: 65px 8%;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 35px;
+    letter-spacing: 2px;
+}
+
+.categories {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.category {
+    border: 1px solid #333;
+    padding: 13px 25px;
+    color: #ccc;
+    font-size: 13px;
+    cursor: pointer;
+    background: #111;
+}
+
+.category:hover {
+    background: white;
+    color: black;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.product {
+    background: #111;
+    border: 1px solid #222;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.product:hover {
+    transform: translateY(-7px);
+    border-color: #777;
+}
+
+.product-image {
+    height: 170px;
+    background: linear-gradient(135deg, #292929, #101010);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+}
+
+.product-info {
+    padding: 22px;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.price {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.buy {
+    width: 100%;
+    padding: 13px;
+    background: white;
+    color: black;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buy:hover {
+    background: #ccc;
+}
+
+.about {
+    text-align: center;
+    background: #101010;
+    padding: 65px 20px;
+}
+
+.about h2 {
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #999;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+footer {
+    padding: 35px;
+    text-align: center;
+    color: #666;
+    border-top: 1px solid #222;
+    font-size: 13px;
+}
+
+@media(max-width: 600px) {
+    header {
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .section {
+        padding: 45px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">DROGON.</div>
+
+    <nav>
+        <a href="#inicio">INÍCIO</a>
+        <a href="#loja">LOJA</a>
+        <a href="#sobre">SOBRE</a>
+    </nav>
+</header>
+
+<section class="hero" id="inicio">
+    <h1>DROGON</h1>
+    <p>SUA PRÓXIMA CONTA COMEÇA AQUI.</p>
+    <button onclick="document.getElementById('loja').scrollIntoView({behavior:'smooth'})">
+        EXPLORAR LOJA
+    </button>
+</section>
+
+<section class="section" id="loja">
+
+    <h2 class="section-title">NOSSA LOJA.</h2>
+
+    <div class="categories">
+        <div class="category">TODOS</div>
+        <div class="category">FREE FIRE</div>
+        <div class="category">FORTNITE</div>
+        <div class="category">VALORANT</div>
+        <div class="category">OUTROS JOGOS</div>
+    </div>
+
+    <div class="products">
+
+        <div class="product">
+            <div class="product-image">🎮</div>
+            <div class="product-info">
+                <h3>Conta Free Fire #01</h3>
+                <p>Conta de demonstração</p>
+                <div class="price">R$ 00,00</div>
+                <button class="buy" onclick="comprar('Conta Free Fire #01')">COMPRAR</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">⚔️</div>
+            <div class="product-info">
+                <h3>Conta Fortnite #01</h3>
+                <p>Conta de demonstração</p>
+                <div class="price">R$ 00,00</div>
+                <button class="buy" onclick="comprar('Conta Fortnite #01')">COMPRAR</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">🔥</div>
+            <div class="product-info">
+                <h3>Conta Valorant #01</h3>
+                <p>Conta de demonstração</p>
+                <div class="price">R$ 00,00</div>
+                <button class="buy" onclick="comprar('Conta Valorant #01')">COMPRAR</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">👑</div>
+            <div class="product-info">
+                <h3>Conta Premium #01</h3>
+                <p>Conta de demonstração</p>
+                <div class="price">R$ 00,00</div>
+                <button class="buy" onclick="comprar('Conta Premium #01')">COMPRAR</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="sobre">
+    <h2>SOBRE A DROGON.</h2>
+    <p>
+        Bem-vindo à DROGON, sua loja de produtos digitais
+        e contas de jogos. Nosso objetivo é oferecer uma
+        experiência simples, moderna e segura para todos
+        os clientes.
+    </p>
+</section>
+
+<footer>
+    © 2026 DROGON STORE — TODOS OS DIREITOS RESERVADOS.
+</footer>
+
+<script>
+function comprar(produto) {
+    alert("Você selecionou: " + produto +
+    "\nEntre em contato com a DROGON para finalizar sua compra.");
+}
+</script>
+
+</body>
+</html>
