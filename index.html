@@ -7,221 +7,67 @@
 <title>DROGON | Game Store</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+:root {
+ --bg:#080808;
+ --card:#111;
+ --white:#fff;
+ --gray:#999;
+ --accent:#fff;
 }
-
-body {
-    background: #080808;
-    color: white;
-}
-
-header {
-    height: 85px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 8%;
-    border-bottom: 1px solid #222;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 5px;
-}
-
-nav a {
-    color: #aaa;
-    text-decoration: none;
-    margin-left: 30px;
-    font-size: 14px;
-    transition: .3s;
-}
-
-nav a:hover {
-    color: white;
-}
-
-.hero {
-    min-height: 430px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 50px 20px;
-    background: radial-gradient(circle, #202020 0%, #080808 70%);
-}
-
-.hero h1 {
-    font-size: clamp(45px, 8vw, 85px);
-    font-weight: 900;
-    letter-spacing: 8px;
-}
-
-.hero p {
-    color: #999;
-    margin-top: 18px;
-    font-size: 16px;
-}
-
-.hero button {
-    margin-top: 30px;
-    padding: 15px 35px;
-    background: white;
-    color: black;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.hero button:hover {
-    background: #aaa;
-    transform: scale(1.05);
-}
-
-.section {
-    padding: 65px 8%;
-}
-
-.section-title {
-    font-size: 28px;
-    margin-bottom: 35px;
-    letter-spacing: 2px;
-}
-
-.categories {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-
-.category {
-    border: 1px solid #333;
-    padding: 13px 25px;
-    color: #ccc;
-    font-size: 13px;
-    cursor: pointer;
-    background: #111;
-}
-
-.category:hover {
-    background: white;
-    color: black;
-}
-
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 25px;
-}
-
-.product {
-    background: #111;
-    border: 1px solid #222;
-    transition: .3s;
-    overflow: hidden;
-}
-
-.product:hover {
-    transform: translateY(-7px);
-    border-color: #777;
-}
-
-.product-image {
-    height: 170px;
-    background: linear-gradient(135deg, #292929, #101010);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 45px;
-}
-
-.product-info {
-    padding: 22px;
-}
-
-.product-info h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.product-info p {
-    color: #888;
-    font-size: 13px;
-    margin-bottom: 18px;
-}
-
-.price {
-    font-size: 23px;
-    font-weight: bold;
-    margin-bottom: 18px;
-}
-
-.buy {
-    width: 100%;
-    padding: 13px;
-    background: white;
-    color: black;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.buy:hover {
-    background: #ccc;
-}
-
-.about {
-    text-align: center;
-    background: #101010;
-    padding: 65px 20px;
-}
-
-.about h2 {
-    font-size: 30px;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-}
-
-.about p {
-    color: #999;
-    max-width: 600px;
-    margin: auto;
-    line-height: 1.8;
-}
-
-footer {
-    padding: 35px;
-    text-align: center;
-    color: #666;
-    border-top: 1px solid #222;
-    font-size: 13px;
-}
-
-@media(max-width: 600px) {
-    header {
-        padding: 0 5%;
-    }
-
-    .logo {
-        font-size: 21px;
-    }
-
-    nav a {
-        margin-left: 10px;
-        font-size: 12px;
-    }
-
-    .section {
-        padding: 45px 5%;
-    }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:var(--bg);color:var(--white)}
+header{height:80px;display:flex;justify-content:space-between;align-items:center;padding:0 8%;border-bottom:1px solid #252525}
+.logo{font-size:27px;font-weight:900;letter-spacing:5px}
+.logo img{max-height:45px;max-width:180px;object-fit:contain}
+nav{display:flex;gap:25px}
+nav a{color:#aaa;text-decoration:none;font-size:13px}
+nav a:hover{color:white}
+.hero{min-height:420px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 15px;background:radial-gradient(circle,#242424,#080808 70%)}
+.hero h1{font-size:clamp(45px,9vw,85px);letter-spacing:9px}
+.hero p{color:#999;margin-top:15px}
+.main-btn,.buy{padding:14px 25px;background:var(--accent);color:#000;border:0;font-weight:bold;cursor:pointer}
+.main-btn{margin-top:30px}
+.section{padding:65px 8%}
+.section-title{font-size:27px;letter-spacing:3px;margin-bottom:30px}
+.categories{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:35px}
+.category{padding:12px 20px;background:#111;color:#ccc;border:1px solid #333;cursor:pointer}
+.category.active,.category:hover{background:white;color:black}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:23px}
+.product{background:#111;border:1px solid #252525;transition:.25s;overflow:hidden}
+.product:hover{transform:translateY(-5px);border-color:#777}
+.product-image{height:175px;background:linear-gradient(135deg,#292929,#101010);display:flex;align-items:center;justify-content:center;font-size:48px}
+.product-image img{width:100%;height:100%;object-fit:cover}
+.product-info{padding:20px}
+.product-info h3{margin-bottom:9px}
+.product-info p{color:#999;font-size:13px;margin-bottom:12px}
+.price{font-size:23px;font-weight:bold;margin:15px 0}
+.buy{width:100%}
+.buy:disabled{opacity:.4;cursor:not-allowed}
+.stock{color:#aaa;font-size:12px}
+.about{padding:65px 20px;text-align:center;background:#101010}
+.about h2{letter-spacing:3px;margin-bottom:18px}
+.about p{max-width:600px;margin:auto;color:#999;line-height:1.8}
+footer{padding:35px;text-align:center;color:#666;border-top:1px solid #222;font-size:13px}
+.floating{position:fixed;right:17px;bottom:18px;z-index:100;display:flex;flex-direction:column;gap:9px}
+.floating button{padding:13px 17px;background:white;color:black;border:0;border-radius:4px;font-weight:bold;cursor:pointer}
+.modal{display:none;position:fixed;inset:0;background:#000e;z-index:999;overflow:auto;padding:20px 10px}
+.panel{max-width:650px;margin:20px auto;background:#111;border:1px solid #444;padding:24px;border-radius:8px;color:white}
+.panel h2{margin-bottom:20px}
+.panel h3{margin:22px 0 12px}
+.panel input,.panel textarea,.panel select{width:100%;padding:12px;margin:7px 0 14px;background:#222;color:white;border:1px solid #444;border-radius:4px}
+.panel button{padding:12px 16px;border:0;margin:4px;cursor:pointer;font-weight:bold}
+.save{background:white;color:black}
+.close{background:#444;color:white}
+.danger{background:#a22;color:white}
+#cart-items{line-height:2}
+#cart-items button{background:#a22;color:white}
+#ticket-image{width:100%;max-height:180px;object-fit:cover;margin-bottom:15px}
+@media(max-width:600px){
+ header{padding:0 5%;height:70px}
+ .logo{font-size:20px;letter-spacing:3px}
+ nav{gap:10px}
+ nav a{font-size:10px}
+ .section{padding:45px 5%}
 }
 </style>
 </head>
@@ -229,99 +75,392 @@ footer {
 <body>
 
 <header>
-    <div class="logo">DROGON.</div>
-
-    <nav>
-        <a href="#inicio">INÍCIO</a>
-        <a href="#loja">LOJA</a>
-        <a href="#sobre">SOBRE</a>
-    </nav>
+ <div class="logo" id="site-logo">DROGON.</div>
+ <nav>
+  <a href="#inicio">INÍCIO</a>
+  <a href="#loja">LOJA</a>
+  <a href="#sobre">SOBRE</a>
+ </nav>
 </header>
 
 <section class="hero" id="inicio">
-    <h1>DROGON</h1>
-    <p>SUA PRÓXIMA CONTA COMEÇA AQUI.</p>
-    <button onclick="document.getElementById('loja').scrollIntoView({behavior:'smooth'})">
-        EXPLORAR LOJA
-    </button>
+ <h1>DROGON</h1>
+ <p>SUA PRÓXIMA CONTA COMEÇA AQUI.</p>
+ <button class="main-btn" onclick="document.getElementById('loja').scrollIntoView({behavior:'smooth'})">EXPLORAR LOJA</button>
 </section>
 
 <section class="section" id="loja">
+ <h2 class="section-title">NOSSA LOJA.</h2>
 
-    <h2 class="section-title">NOSSA LOJA.</h2>
+ <div class="categories">
+  <button class="category active" onclick="filterProducts('TODOS',this)">TODOS</button>
+  <button class="category" onclick="filterProducts('FREE FIRE',this)">FREE FIRE</button>
+  <button class="category" onclick="filterProducts('FORTNITE',this)">FORTNITE</button>
+  <button class="category" onclick="filterProducts('VALORANT',this)">VALORANT</button>
+  <button class="category" onclick="filterProducts('OUTROS',this)">OUTROS JOGOS</button>
+ </div>
 
-    <div class="categories">
-        <div class="category">TODOS</div>
-        <div class="category">FREE FIRE</div>
-        <div class="category">FORTNITE</div>
-        <div class="category">VALORANT</div>
-        <div class="category">OUTROS JOGOS</div>
-    </div>
-
-    <div class="products">
-
-        <div class="product">
-            <div class="product-image">🎮</div>
-            <div class="product-info">
-                <h3>Conta Free Fire #01</h3>
-                <p>Conta de demonstração</p>
-                <div class="price">R$ 00,00</div>
-                <button class="buy" onclick="comprar('Conta Free Fire #01')">COMPRAR</button>
-            </div>
-        </div>
-
-        <div class="product">
-            <div class="product-image">⚔️</div>
-            <div class="product-info">
-                <h3>Conta Fortnite #01</h3>
-                <p>Conta de demonstração</p>
-                <div class="price">R$ 00,00</div>
-                <button class="buy" onclick="comprar('Conta Fortnite #01')">COMPRAR</button>
-            </div>
-        </div>
-
-        <div class="product">
-            <div class="product-image">🔥</div>
-            <div class="product-info">
-                <h3>Conta Valorant #01</h3>
-                <p>Conta de demonstração</p>
-                <div class="price">R$ 00,00</div>
-                <button class="buy" onclick="comprar('Conta Valorant #01')">COMPRAR</button>
-            </div>
-        </div>
-
-        <div class="product">
-            <div class="product-image">👑</div>
-            <div class="product-info">
-                <h3>Conta Premium #01</h3>
-                <p>Conta de demonstração</p>
-                <div class="price">R$ 00,00</div>
-                <button class="buy" onclick="comprar('Conta Premium #01')">COMPRAR</button>
-            </div>
-        </div>
-
-    </div>
+ <div class="products" id="products"></div>
 </section>
 
 <section class="about" id="sobre">
-    <h2>SOBRE A DROGON.</h2>
-    <p>
-        Bem-vindo à DROGON, sua loja de produtos digitais
-        e contas de jogos. Nosso objetivo é oferecer uma
-        experiência simples, moderna e segura para todos
-        os clientes.
-    </p>
+ <h2>SOBRE A DROGON.</h2>
+ <p>Bem-vindo à DROGON, sua loja de produtos digitais e contas de jogos. Uma experiência moderna e simples para todos os jogadores.</p>
 </section>
 
 <footer>
-    © 2026 DROGON STORE — TODOS OS DIREITOS RESERVADOS.
+ © 2026 DROGON STORE — TODOS OS DIREITOS RESERVADOS.
 </footer>
 
+<div class="floating">
+ <button onclick="openAdmin()">⚙ ADMIN</button>
+ <button onclick="openCart()">🛒 CARRINHO (<span id="cart-count">0</span>)</button>
+ <button onclick="openSupport()">🎫 SUPORTE</button>
+</div>
+
+<!-- ADMIN -->
+<div class="modal" id="admin-modal">
+ <div class="panel">
+  <h2>⚙ DROGON ADMIN</h2>
+
+  <div id="login-area">
+   <p>Senha de administrador:</p>
+   <input type="password" id="admin-password" placeholder="Senha">
+   <button class="save" onclick="login()">ENTRAR</button>
+   <p id="login-error"></p>
+  </div>
+
+  <div id="admin-area" style="display:none">
+   <h3>🎨 Personalização</h3>
+   <label>Cor principal</label>
+   <input type="color" id="color-setting" value="#ffffff">
+
+   <label>Nome da loja</label>
+   <input id="logo-setting" placeholder="DROGON.">
+
+   <label>URL da imagem da logo</label>
+   <input id="logo-image-setting" placeholder="https://...">
+
+   <button class="save" onclick="saveSettings()">SALVAR LOGO E COR</button>
+
+   <h3>📦 Produtos</h3>
+   <label>Selecionar produto</label>
+   <select id="product-select" onchange="loadProduct()"></select>
+
+   <label>Nome</label>
+   <input id="product-name">
+
+   <label>Categoria</label>
+   <select id="product-category">
+    <option>FREE FIRE</option>
+    <option>FORTNITE</option>
+    <option>VALORANT</option>
+    <option>OUTROS</option>
+   </select>
+
+   <label>Descrição</label>
+   <input id="product-desc">
+
+   <label>Preço (R$)</label>
+   <input type="number" id="product-price" min="0" step=".01">
+
+   <label>Estoque</label>
+   <input type="number" id="product-stock" min="0" step="1">
+
+   <label>Imagem (URL)</label>
+   <input id="product-image" placeholder="https://...">
+
+   <button class="save" onclick="saveProduct()">SALVAR PRODUTO</button>
+   <button class="save" onclick="addProduct()">+ NOVO PRODUTO</button>
+   <button class="danger" onclick="deleteProduct()">EXCLUIR</button>
+
+   <h3>🎫 Imagem do ticket</h3>
+   <input id="ticket-setting" placeholder="URL da imagem do ticket">
+   <button class="save" onclick="saveSettings()">SALVAR IMAGEM</button>
+
+   <button class="close" onclick="logout()">SAIR</button>
+  </div>
+
+  <button class="close" onclick="closeModal('admin-modal')">FECHAR</button>
+ </div>
+</div>
+
+<!-- CARRINHO -->
+<div class="modal" id="cart-modal">
+ <div class="panel">
+  <h2>🛒 MEU CARRINHO</h2>
+  <div id="cart-items"></div>
+  <h3 id="cart-total">Total: R$ 0,00</h3>
+  <button class="save" onclick="checkout()">FINALIZAR NO WHATSAPP</button>
+  <button class="danger" onclick="clearCart()">LIMPAR CARRINHO</button>
+  <button class="close" onclick="closeModal('cart-modal')">FECHAR</button>
+ </div>
+</div>
+
+<!-- SUPORTE -->
+<div class="modal" id="support-modal">
+ <div class="panel">
+  <h2>🎫 CENTRAL DE SUPORTE</h2>
+  <img id="ticket-image" style="display:none">
+  <p>Precisa de ajuda? Fale com nossa equipe.</p>
+  <input id="support-name" placeholder="Seu nome">
+  <input id="support-email" placeholder="Seu email">
+  <textarea id="support-message" rows="5" placeholder="Descreva seu problema"></textarea>
+  <button class="save" onclick="sendTicket()">ENVIAR TICKET PELO WHATSAPP</button>
+  <button class="close" onclick="closeModal('support-modal')">FECHAR</button>
+ </div>
+</div>
+
 <script>
-function comprar(produto) {
-    alert("Você selecionou: " + produto +
-    "\nEntre em contato com a DROGON para finalizar sua compra.");
+const ADMIN_PASSWORD="Hairk827";
+const WHATSAPP="573160179301";
+
+const defaultProducts=[
+ {name:"Conta Free Fire #01",category:"FREE FIRE",desc:"Conta de demonstração",price:49.90,stock:10,image:""},
+ {name:"Conta Fortnite #01",category:"FORTNITE",desc:"Conta de demonstração",price:79.90,stock:10,image:""},
+ {name:"Conta Valorant #01",category:"VALORANT",desc:"Conta de demonstração",price:59.90,stock:10,image:""},
+ {name:"Conta Premium #01",category:"OUTROS",desc:"Conta de demonstração",price:99.90,stock:10,image:""}
+];
+
+let products=JSON.parse(localStorage.getItem("drogon_products")||"null")||defaultProducts;
+let cart=JSON.parse(localStorage.getItem("drogon_cart")||"[]");
+let settings=JSON.parse(localStorage.getItem("drogon_settings")||"{}");
+
+function saveData(){
+ localStorage.setItem("drogon_products",JSON.stringify(products));
+ localStorage.setItem("drogon_cart",JSON.stringify(cart));
+ localStorage.setItem("drogon_settings",JSON.stringify(settings));
 }
+
+function escapeHTML(value){
+ return String(value??"").replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ }[c]));
+}
+
+function money(value){
+ return Number(value).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+}
+
+function renderProducts(category="TODOS"){
+ let area=document.getElementById("products");
+ let list=products.map((p,i)=>({...p,index:i})).filter(p=>category==="TODOS"||p.category===category);
+
+ area.innerHTML=list.map(p=>`
+  <div class="product">
+   <div class="product-image">
+    ${p.image?`<img src="${escapeHTML(p.image)}" alt="${escapeHTML(p.name)}">`:"🎮"}
+   </div>
+   <div class="product-info">
+    <h3>${escapeHTML(p.name)}</h3>
+    <p>${escapeHTML(p.desc)}</p>
+    <p class="stock">Estoque: ${p.stock}</p>
+    <div class="price">${money(p.price)}</div>
+    <button class="buy" onclick="addToCart(${p.index})" ${p.stock<=0?"disabled":""}>
+     ${p.stock<=0?"ESGOTADO":"ADICIONAR AO CARRINHO"}
+    </button>
+   </div>
+  </div>
+ `).join("")||"<p>Nenhum produto nesta categoria.</p>";
+}
+
+function filterProducts(category,button){
+ document.querySelectorAll(".category").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");
+ renderProducts(category);
+}
+
+function addToCart(i){
+ let p=products[i];
+ if(!p||p.stock<=0)return alert("Produto sem estoque!");
+ let item=cart.find(x=>x.id===i);
+ if(item&&item.qty>=p.stock)return alert("Estoque máximo atingido!");
+ if(item)item.qty++;
+ else cart.push({id:i,qty:1});
+ saveData();
+ updateCart();
+ alert("Adicionado ao carrinho!");
+}
+
+function updateCart(){
+ cart=cart.filter(x=>products[x.id]);
+ let count=0,total=0;
+ document.getElementById("cart-items").innerHTML=cart.map(x=>{
+  let p=products[x.id];
+  count+=x.qty;
+  total+=p.price*x.qty;
+  return `<div>${escapeHTML(p.name)} × ${x.qty} — ${money(p.price*x.qty)}
+  <button onclick="removeCart(${x.id})">REMOVER</button></div>`;
+ }).join("")||"Seu carrinho está vazio.";
+
+ document.getElementById("cart-count").textContent=count;
+ document.getElementById("cart-total").textContent="Total: "+money(total);
+ saveData();
+}
+
+function removeCart(i){
+ cart=cart.filter(x=>x.id!==i);
+ updateCart();
+}
+
+function clearCart(){
+ cart=[];
+ updateCart();
+}
+
+function checkout(){
+ if(!cart.length)return alert("Carrinho vazio!");
+ let msg="Olá! Quero fazer um pedido na DROGON:\n";
+ let total=0;
+ cart.forEach(x=>{
+  let p=products[x.id];
+  msg+=`\n${p.name} x${x.qty} - ${money(p.price*x.qty)}`;
+  total+=p.price*x.qty;
+ });
+ msg+="\n\nTotal: "+money(total);
+ window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg),"_blank");
+}
+
+function openCart(){
+ updateCart();
+ document.getElementById("cart-modal").style.display="block";
+}
+
+function openSupport(){
+ let img=document.getElementById("ticket-image");
+ img.style.display=settings.ticket?"block":"none";
+ if(settings.ticket)img.src=settings.ticket;
+ document.getElementById("support-modal").style.display="block";
+}
+
+function sendTicket(){
+ let name=document.getElementById("support-name").value.trim();
+ let email=document.getElementById("support-email").value.trim();
+ let message=document.getElementById("support-message").value.trim();
+ if(!name||!message)return alert("Preencha seu nome e mensagem.");
+ let msg=`SUPORTE DROGON\nNome: ${name}\nEmail: ${email}\nMensagem: ${message}`;
+ window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg),"_blank");
+}
+
+function closeModal(id){
+ document.getElementById(id).style.display="none";
+}
+
+function openAdmin(){
+ document.getElementById("admin-modal").style.display="block";
+}
+
+function login(){
+ if(document.getElementById("admin-password").value===ADMIN_PASSWORD){
+  document.getElementById("login-area").style.display="none";
+  document.getElementById("admin-area").style.display="block";
+  loadSettings();
+  refreshSelect();
+ }else{
+  document.getElementById("login-error").textContent="Senha incorreta!";
+ }
+}
+
+function logout(){
+ document.getElementById("login-area").style.display="block";
+ document.getElementById("admin-area").style.display="none";
+ document.getElementById("admin-password").value="";
+}
+
+function refreshSelect(){
+ let select=document.getElementById("product-select");
+ select.innerHTML=products.map((p,i)=>`<option value="${i}">${escapeHTML(p.name)}</option>`).join("");
+ if(products.length)loadProduct();
+}
+
+function loadProduct(){
+ let i=Number(document.getElementById("product-select").value);
+ let p=products[i];
+ if(!p)return;
+ document.getElementById("product-name").value=p.name;
+ document.getElementById("product-category").value=p.category;
+ document.getElementById("product-desc").value=p.desc;
+ document.getElementById("product-price").value=p.price;
+ document.getElementById("product-stock").value=p.stock;
+ document.getElementById("product-image").value=p.image||"";
+}
+
+function saveProduct(){
+ let i=Number(document.getElementById("product-select").value);
+ if(!products[i])return;
+ let price=Number(document.getElementById("product-price").value);
+ let stock=Number(document.getElementById("product-stock").value);
+ if(!Number.isFinite(price)||price<0||!Number.isInteger(stock)||stock<0)
+  return alert("Confira preço e estoque.");
+ products[i]={
+  name:document.getElementById("product-name").value,
+  category:document.getElementById("product-category").value,
+  desc:document.getElementById("product-desc").value,
+  price,
+  stock,
+  image:document.getElementById("product-image").value
+ };
+ saveData();
+ renderProducts();
+ refreshSelect();
+ alert("Produto salvo!");
+}
+
+function addProduct(){
+ products.push({
+  name:"Novo produto",category:"OUTROS",desc:"Descrição",
+  price:0,stock:0,image:""
+ });
+ saveData();
+ refreshSelect();
+ document.getElementById("product-select").value=products.length-1;
+ loadProduct();
+ renderProducts();
+}
+
+function deleteProduct(){
+ let i=Number(document.getElementById("product-select").value);
+ if(!products[i]||!confirm("Excluir este produto?"))return;
+ products.splice(i,1);
+ cart=cart.filter(x=>x.id!==i).map(x=>({...x,id:x.id>i?x.id-1:x.id}));
+ saveData();
+ refreshSelect();
+ renderProducts();
+ updateCart();
+}
+
+function loadSettings(){
+ document.getElementById("color-setting").value=settings.color||"#ffffff";
+ document.getElementById("logo-setting").value=settings.logo||"DROGON.";
+ document.getElementById("logo-image-setting").value=settings.logoImage||"";
+ document.getElementById("ticket-setting").value=settings.ticket||"";
+}
+
+function saveSettings(){
+ settings={
+  color:document.getElementById("color-setting").value,
+  logo:document.getElementById("logo-setting").value,
+  logoImage:document.getElementById("logo-image-setting").value,
+  ticket:document.getElementById("ticket-setting").value
+ };
+ applySettings();
+ saveData();
+ alert("Personalização salva!");
+}
+
+function applySettings(){
+ document.documentElement.style.setProperty("--accent",settings.color||"#ffffff");
+ let logo=document.getElementById("site-logo");
+ if(settings.logoImage){
+  logo.innerHTML=`<img src="${escapeHTML(settings.logoImage)}" alt="DROGON">`;
+ }else{
+  logo.textContent=settings.logo||"DROGON.";
+ }
+}
+
+applySettings();
+renderProducts();
+updateCart();
 </script>
 
 </body>
